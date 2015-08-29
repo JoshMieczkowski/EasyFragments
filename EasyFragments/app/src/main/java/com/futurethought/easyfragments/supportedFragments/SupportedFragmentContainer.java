@@ -1,5 +1,6 @@
 package com.futurethought.easyfragments.supportedFragments;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 
 /**
@@ -8,7 +9,7 @@ import android.support.v4.app.Fragment;
 public class SupportedFragmentContainer {
     private Fragment fragment;
     private String tag;
-    private int holderID;
+    private int holderID = -1;
 
     public SupportedFragmentContainer(Fragment fragment, String tag, int holderID) {
         this.fragment = fragment;
@@ -19,6 +20,11 @@ public class SupportedFragmentContainer {
     public SupportedFragmentContainer(Fragment fragment, int holderID) {
         this.fragment = fragment;
         this.holderID = holderID;
+    }
+
+    public SupportedFragmentContainer(DialogFragment fragment, String tag) {
+        this.fragment = fragment;
+        this.tag = tag;
     }
 
     public Fragment getFragment() {

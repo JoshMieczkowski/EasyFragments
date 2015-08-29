@@ -53,5 +53,23 @@ fragmentHandler.remove(new FragmentSettings(),
                 "FRAGMENT_TAG");
 ```
 
+# How to show DialogFragments
+```java
+//Recommend making this a global for your activity and initialize this in onCreate()
+FragmentHandler fragmentHandler = new FragmentHandler(activity);
+fragmentHandler.show(new FragmentSettings("MY_BACKSTACK_TAG"),
+		new FragmentContainer(new DialogFragment(), "FRAGMENT_TAG"));
+```
+
+For supportedFragments
+```java
+//Recommend making this a global for your activity and initialize this in onCreate()
+SupportedFragmentHandler fragmentHandler = new SupportedFragmentHandler(fragmentActivity);
+fragmentHandler.show(new FragmentSettings("MY_BACKSTACK_TAG"),
+		new SupportedFragmentContainer(new DialogFragment(), "FRAGMENT_TAG"));
+```
+
 #Notes
 You can pass it x number of FragmentContainers or tags as you like. 
+
+Please make sure to use an unique tag for the backStack and your fragments. For fragments, I recommend using the YourCustomFragment.class.getName().
