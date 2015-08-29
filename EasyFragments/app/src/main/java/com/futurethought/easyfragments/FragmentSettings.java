@@ -19,6 +19,9 @@ public class FragmentSettings {
         this.backStackTag = backStackTag;
     }
 
+    public FragmentSettings() {
+    }
+
     public boolean isExecuteImmediately() {
         return executeImmediately;
     }
@@ -31,15 +34,13 @@ public class FragmentSettings {
         return addToBackStack;
     }
 
-    public void setAddToBackStack(boolean addToBackStack) {
-        this.addToBackStack = addToBackStack;
-    }
-
     public String getBackStackTag() {
         return backStackTag;
     }
 
     public void setBackStackTag(String backStackTag) {
+        this.addToBackStack = backStackTag != null;
+
         this.backStackTag = backStackTag;
     }
 
