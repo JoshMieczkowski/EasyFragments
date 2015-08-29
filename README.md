@@ -11,6 +11,14 @@ fragmentHandler.add(new FragmentSettings("MY_BACKSTACK_TAG"),
 		new FragmentContainer(new Fragment(), R.id.placeholder, "FRAGMENT_TAG"));
 ```
 
+For supportedFragments
+```java
+//Recommend making this a global for your activity and initialize this in onCreate()
+SupportedFragmentHandler fragmentHandler = new SupportedFragmentHandler(fragmentActivity);
+fragmentHandler.add(new FragmentSettings("MY_BACKSTACK_TAG"),
+		new SupportedFragmentContainer(new Fragment(), R.id.placeholder, "FRAGMENT_TAG"));
+```
+
 # How to replace a fragment
 Replacing a fragment will replace whatever fragment is currently at the place holder. This will call onResume for the new fragment and onPause for the old fragment. If you press the back button and have a backStackTag, the old fragment will have onResume called. This does not happen for add.
 ```java
@@ -20,11 +28,27 @@ fragmentHandler.add(new FragmentSettings("MY_BACKSTACK_TAG"),
 		new FragmentContainer(new Fragment(), R.id.placeholder, "FRAGMENT_TAG"));
 ```
 
+For supportedFragments
+```java
+//Recommend making this a global for your activity and initialize this in onCreate()
+SupportedFragmentHandler fragmentHandler = new SupportedFragmentHandler(fragmentActivity);
+fragmentHandler.add(new FragmentSettings("MY_BACKSTACK_TAG"),
+		new SupportedFragmentContainer(new Fragment(), R.id.placeholder, "FRAGMENT_TAG"));
+```
+
 # How to remove a fragment
 This will remove the fragment as well as remove it from the backStack if it was added to it
 ```java
 //Recommend making this a global for your activity and initialize this in onCreate()
 FragmentHandler fragmentHandler = new FragmentHandler(activity);
+fragmentHandler.remove(new FragmentSettings(),
+                "FRAGMENT_TAG");
+```
+
+For supportedFragments
+```java
+//Recommend making this a global for your activity and initialize this in onCreate()
+SupportedFragmentHandler fragmentHandler = new SupportedFragmentHandler(fragmentActivity);
 fragmentHandler.remove(new FragmentSettings(),
                 "FRAGMENT_TAG");
 ```
