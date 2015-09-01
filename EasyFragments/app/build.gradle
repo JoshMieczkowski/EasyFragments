@@ -25,11 +25,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 bintray {
-    Properties properties = new Properties()
-    properties.load(new File(rootDir.absolutePath + "/local.properties").newDataInputStream())
-
     user = properties.getProperty('bintray.user')
     key = properties.getProperty('bintray.apikey')
 
