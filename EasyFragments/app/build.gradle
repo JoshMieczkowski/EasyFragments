@@ -1,4 +1,27 @@
 apply plugin: 'com.android.library'
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'easy-fragments'
+
+    publishedGroupId = 'com.futurethought'
+    libraryName = 'EasyFragments'
+    artifact = 'easy-fragments'
+
+    libraryDescription = 'Tired of rewriting the same code just to handle fragments? Forgetting the awesome transitions that you can do? Want to make sure the backstack is being handled? Then EasyFragments is probably for you. This library takes all the code used for fragments and simplifies it so you do have to keep rewriting it.'
+
+    siteUrl = 'https://github.com/JoshMieczkowski/EasyFragments'
+    gitUrl = 'https://github.com/JoshMieczkowski/EasyFragments.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'joshmieczkowski'
+    developerName = 'Josh Mieczkowski'
+    developerEmail = 'joshmieczkowski@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion 22
